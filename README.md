@@ -3,7 +3,7 @@ hack_dx6i
 
 Automatic Timer Start / Stop for Spektrum Dx6i Transmitter
 
-          /-------+
+          +-------+
        NC | 1   8 | VCC (Check that never be higher than 5.5V)
  Throttle | 2   7 | NC
      Gear | 3   6 | NC
