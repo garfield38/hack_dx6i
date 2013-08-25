@@ -1,8 +1,8 @@
 ' *****************************************************************************
 ' * Project: Automatic Timer On/Off for Spektrum Dx6i                         *
 ' * Author: Stephane Driussi                                                  *
-' * Release: 1.0                                                              *
-' * Date: August 15, 2013                                                     *
+' * Release: 1.1                                                              *
+' * Date: August 25, 2013                                                     *
 ' *****************************************************************************
 '          /-------+
 '       NC | 1   8 | VCC
@@ -31,14 +31,14 @@ Armed = 0
 Waitms 100
 ' Check if trhottle is in low or middle position
 Throttle = Getadc(3)          ' Throttle pin.2
-If Throttle < 100 Then
+If Throttle < 400 Then
   Do                          ' Low position, the timer is managed by throttle
     Throttle = Getadc(3)
-    If Throttle > 100 And Armed = 0 Then
+    If Throttle > 200 And Armed = 0 Then
       Armed = 1
       Gosub Sendpulsetrainer
     End If
-    If Throttle < 50 And Armed = 1 Then
+    If Throttle < 150 And Armed = 1 Then
       Armed = 0
       Gosub Sendpulsetrainer
     End If
